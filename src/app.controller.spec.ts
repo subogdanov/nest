@@ -18,4 +18,11 @@ describe('AppController', () => {
       expect(appController.getHello()).toBe('Hello World!');
     });
   });
+
+  describe('testValidation', () => {
+    it('should return "Hello World!"', () => {
+      const appController = app.get(AppController);
+      appController.testValidation({ content: '{"test": "true"}' });
+    });
+  });
 });
